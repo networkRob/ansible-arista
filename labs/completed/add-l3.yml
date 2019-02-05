@@ -1,0 +1,9 @@
+---
+- hosts: 192.168.0.17
+  gather_facts: false
+  tasks:
+    - name: Apply L3 Interfaces to Leaf4
+      eos_l3_interface:
+        name: "{{ item.name }}"
+        ipv4: "{{ item.ipaddress }}"
+      loop: "{{ l3_intf }}"

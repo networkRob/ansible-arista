@@ -1,0 +1,14 @@
+---
+- hosts: spines
+  gather_facts: false
+  tasks:
+    - name: Get LLDP Neighbor Information
+      eos_command:
+        commands: 
+          - command: show lldp neighbors
+            output: json
+      register: lldp_info
+    - name: Output LLDP Information
+      debug:
+        var: "{{ item }}"
+      loop: "{{ lldp_info.stdout_lines }}"

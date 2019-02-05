@@ -1,0 +1,13 @@
+router bgp {{ bgp_as }}
+   router-id {{ bgp_id }}
+   maximum-paths 4 ecmp 4
+{% for neighbor in bgp_conf %}
+   neighbor {{ neighbor.ip }} remote-as {{ neighbor.remote_as }}
+{% if bgp_as == neighbor.remote_as %}
+   neighbor {{ neighbor.ip }} next-hop-self
+{% else %}
+   neighbor {{ neighbor.ip }} maximum-routes 12000
+{% endif %}
+{% endfor %}
+   network {{ bgp_id }}/32
+   network 172.16.116.0/24

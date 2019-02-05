@@ -1,0 +1,7 @@
+{% for intf in l3_intf %}
+interface {{ intf.name }}
+{% if 'Ethernet' in intf.name %}
+   no switchport
+{% endif %}
+   ip address {{ intf.ipaddress }}
+{% endfor %}

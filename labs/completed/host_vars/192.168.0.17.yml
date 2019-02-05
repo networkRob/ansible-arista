@@ -1,0 +1,17 @@
+l3_intf:
+  - name: Ethernet2
+    ipaddress: 172.16.200.14/30
+  - name: Ethernet3
+    ipaddress: 172.16.200.30/30
+  - name: Loopback0
+    ipaddress: 172.16.0.6/32
+
+bgp_id: 172.16.0.6
+bgp_as: 65002
+bgp_conf:
+  - ip: 172.16.200.13
+    remote_as: 65000
+  - ip: 172.16.200.29
+    remote_as: 65000
+  - ip: 172.16.34.1
+    remote_as: 65002

@@ -1,0 +1,9 @@
+---
+- hosts: 192.168.0.17
+  gather_facts: false
+  tasks:
+    - name: Apply L3 Interfaces to Leaf4
+      eos_config:
+        src: l3-intf.j2
+        defaults: yes
+        save_when: modified

@@ -1,0 +1,16 @@
+---
+- hosts: eos-lab
+  gather_facts: false
+  tasks:
+    - name: Change the MOTD Banner
+      eos_banner:
+        banner: login
+        text: |
+          ************************************
+          **             NOTICE             **
+          ************************************
+              UNAUTHORIZED ACCESS TO THIS 
+                  NETWORK DEVICE IS 
+                    PROHIBITED
+          ************************************
+        state: present

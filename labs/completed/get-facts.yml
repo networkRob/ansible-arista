@@ -1,0 +1,6 @@
+---
+- hosts: spines
+  gather_facts: false
+  tasks:
+    - name: Get EOS Facts
+      eos_facts:
