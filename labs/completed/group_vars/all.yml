@@ -1,0 +1,18 @@
+ansible_user: arista
+ansible_password: arista
+ansible_network_os: eos
+ansible_connection: httpapi
+ansible_become: true
+ansible_become_method: enable
+
+eos_vlans:
+  - vlan_id: 2002
+    name: DMZ
+  - vlan_id: 2003
+    name: Dev
+  - vlan_id: 2004
+    name: Corporate
+  - vlan_id: 2005
+    name: Users
+  - vlan_id: 2006
+    name: Guests

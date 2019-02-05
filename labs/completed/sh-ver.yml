@@ -1,0 +1,14 @@
+---
+- hosts: eos-lab
+  gather_facts: false
+  tasks:
+    - name: Show Version
+      eos_command:
+        commands: 
+          - command: show version
+            output: json
+      register: ver
+    - name: Output Version
+      debug:
+        msg: "EOS VERSION: {{ item.version }}"
+      loop: "{{ ver.stdout_lines }}"

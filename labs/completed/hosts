@@ -1,0 +1,10 @@
+[spines]
+192.168.0.10
+192.168.0.11
+
+[leafs]
+192.168.0.1[4:7]
+
+[eos-lab:children]
+spines
+leafs

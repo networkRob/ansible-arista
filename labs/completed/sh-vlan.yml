@@ -1,0 +1,14 @@
+---
+- hosts: eos-lab
+  gather_facts: false
+  tasks:
+    - name: Show vlans
+      eos_command:
+        commands: 
+          - command: show vlan
+            output: json
+      register: vlans
+    - name: Output Version
+      debug:
+        var: "{{ item.vlans }}"
+      loop: "{{ vlans.stdout_lines }}"

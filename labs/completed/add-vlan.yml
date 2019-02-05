@@ -1,0 +1,12 @@
+---
+- hosts: eos-lab
+  gather_facts: false
+  tasks:
+    - name: Add Single VLAN
+      eos_vlan:
+        vlan_id: 2001
+        name: Production
+        state: present
+    - name: Add Multiple VLANS
+      eos_vlan:
+        aggregate: "{{ eos_vlans }}"
