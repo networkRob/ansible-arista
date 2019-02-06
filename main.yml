@@ -1,0 +1,54 @@
+---
+- hosts: localhost
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Create tmp Directory
+      file:
+        path: /tmp/ansible
+        state: directory
+        mode: 0755
+    - name: Copy Ansible Labguide to tmp
+      copy:
+        src: labguides/
+        dest: /tmp/ansible
+    - name: Execute Ansible Labguide build
+      shell: make html
+      args:
+        chdir: /tmp/ansible
+    - name: Execute Sphinx-build for Latex
+      shell: sphinx-build -b latex source build
+      args:
+        chdir: /tmp/ansible
+    - name: Build PDF document
+      shell: make latexpdf
+      args:
+        chdir: /tmp/ansible
+    - name: Create Ansible Labguide html directory
+      file:
+        path: /var/www/html/atd/ansibleguides
+        state: directory
+        mode: 0755
+    - name: Move Ansible guides to web directory
+      shell: mv /tmp/ansible/build/html/* /var/www/html/atd/ansibleguides
+    - name: Move Ansible PDF guide to web directory
+      shell: mv /tmp/ansible/build/latex/ATD.pdf /var/www/html/atd/ansibleguides
+    - name: Change Ansible Web directory permissions
+      file:
+        path: /var/www/html/atd/ansibleguides
+        owner: www-data
+        group: www-data
+        recurse: yes
+    - name: Remove tmp directory
+      file:
+        path: /tmp/ansible
+        state: absent
+    - name: Add Ansible Labguide link to Access Page
+      blockinfile:
+        path: /var/www/html/atd/index.php
+        marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+        insertafter: 'class="hr">'
+        block: |
+          <li>
+              <a href="/ansibleguides/" target="_blank">Ansible Guides</a> <a href="/ansibleguides/ATD.pdf" target="_blank">(PDF)</a>
+          </li>
