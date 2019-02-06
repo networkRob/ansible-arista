@@ -16,7 +16,7 @@ Exercise 6 - EOS L3 Interfaces
             - name: Apply L3 Interfaces to Leaf4
               eos_l3_interface:
                 name: "{{ item.name }}"
-                ipv4: "{{ item.ipaddress }}"
+                ipv4: "{{ item.ipaddress }}/{{ item.mask }}"
               loop: "{{ l3_intf }}"
 
 |
