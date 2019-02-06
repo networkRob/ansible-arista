@@ -12,16 +12,12 @@ SSH to the public IP address assigned to the LabAccess jumphost server (this is 
 
 You will be greeted with the following menu:
 
-|
-
 .. image:: images/connecting_1.png
    :align: center
 
 |
 
 Select option **15** (**BGP Lab (bgp)**), wait til the command has completed, then log out.
-
-|
 
 2. Now we need to make sure that you can access your handy lab machine! You should have received your login 
 information (a URL) from your friendly Arista SE already. If you have not, please reach out and ask for one.

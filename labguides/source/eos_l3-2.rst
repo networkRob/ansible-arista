@@ -3,8 +3,6 @@ Exercise 7 - EOS L3 Interfaces (Continued)
 
 1. Next we will go over the **eos_config**.  This module allows us to directly input configuration information into the running-config from a playbook.
 
-|
-
 2. For this playbook, we will introduce the use of a Jinja2 template.  Jinja2 templates help reduce the amount of configurations that need to be typed ahead of time.  This is acheived by looping through a set of variables for the task.  Let's start by creating a new file with the following information, and save it as ``l3-intf.j2``
 
     .. code-block:: text
@@ -15,10 +13,10 @@ Exercise 7 - EOS L3 Interfaces (Continued)
            no switchport
         {% endif %}
            ip address {{ intf.ipaddress }}/{{ intf.mask }}
-        {% endfor %}        
+        {% endfor %}  
 
-|
-
+.. note::
+    In Jinja2, to add logic, ie ``for`` loops or ``if`` statements, they need to be inserted between ``{% ... %}```.  For the data in variables to be displayed, the need to be enclosed within double curly brackets: ``{{ ... }}``.      
 
 3. Create a new file with the following information, and save it as ``add-l3-2.yml``
 
@@ -34,7 +32,8 @@ Exercise 7 - EOS L3 Interfaces (Continued)
                 defaults: yes
                 save_when: modified
 
-|
+.. note::
+    Notice how all we need to specify for the task is the ``l3-intf.j2`` Jinja file?
 
 4. Before we run this playbook, in **Terminal** let's login to a switch to see the current IP addreses configured on leaf4. username: ``arista`` password: ``arista``
 
@@ -69,6 +68,5 @@ Now all interfaces show up with the correct IP Address!
     :align: center
 
 |
-
 
 **Section Complete!**

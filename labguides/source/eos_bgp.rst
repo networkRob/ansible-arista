@@ -3,8 +3,6 @@ Exercise 8 - EOS BGP Configuration
 
 1. For this exercise we will use the **eos_config** module again.
 
-|
-
 2. First we will need to create a new Jinja2 template.  Add the following ad save it as ``bgp.j2``
 
     .. code-block:: text
@@ -27,6 +25,9 @@ Exercise 8 - EOS BGP Configuration
         {% endfor %}
            network 172.16.116.0/24
 
+.. note::
+    In the ``bgp.j2`` file, it is parsing through the ``host_vars/192.168.0.17.yml`` file.  First it sets the BGP AS number, then it loops through all of the configured interfaces for the ``Loopback0`` interface.  Which will be used as the ``router-id``.  It then loops through all BGP neighbors specified and adds the appropriate BGP neighbor statements.
+
 2. Create a new file with the following information, and save it as ``add-bgp.yml``
 
     .. code-block:: yaml
@@ -41,7 +42,8 @@ Exercise 8 - EOS BGP Configuration
                 defaults: yes
                 save_when: modified
 
-|
+.. note::
+    Like the ``add-l3-2.yml`` file, only the ``bgp.j2`` Jinja2 file needs to specified as a source within the playbook.
 
 3. Before we run this playbook, in **Terminal** let's login to see the BGP state configured on leaf4. username: ``arista`` password: ``arista``
 
@@ -76,7 +78,5 @@ Exercise 8 - EOS BGP Configuration
     :align: center
 
 |
-
-
 
 **Section Complete!**
