@@ -51,7 +51,7 @@ Exercise 3 - EOS Commands
               eos_command:
                 commands: 
                 - command: show lldp neighbors
-                    output: json
+                  output: json
               register: lldp_info
             - name: Output LLDP Information
               debug:
