@@ -5,7 +5,7 @@ Exercise 6 - EOS L3 Interfaces
 
 |
 
-2. Create a new file with the following information, and save it as **add-l3.yml**
+2. Create a new file with the following information, and save it as ``add-l3.yml``
 
     .. code-block:: yaml
 
@@ -21,7 +21,7 @@ Exercise 6 - EOS L3 Interfaces
 
 |
 
-3. Before we run this playbook, in **Terminal** let's login to a switch to see the current IP addreses configured on leaf4. username: arista / password: arista
+3. Before we run this playbook, in **Terminal** let's login to a switch to see the current IP addreses configured on leaf4. username: ``arista`` password: ``arista``
 
     .. code-block:: text
 
@@ -59,4 +59,4 @@ Wait! The playbook configured the Loopback0 IP, but doesn't appear to have confi
 We will go over in the next exercise how to overcome this limitation in the module.
 
 
-Section Complete!
+**Section Complete!**

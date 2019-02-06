@@ -5,7 +5,7 @@ Exercise 2 - EOS Facts
 
 |
 
-2. Create a new file with the following information, and save it as **get-facts.yml**
+2. Create a new file with the following information, and save it as ``get-facts.yml``
 
     .. code-block:: yaml
 
@@ -18,7 +18,7 @@ Exercise 2 - EOS Facts
        
 |
 
-3. Next go to your **Terminal** window, and make sure you are in the following directory. **~/Documents/ansible-arista/labs/class**
+3. Next go to your **Terminal** window, and make sure you are in the following directory. ``~/Documents/ansible-arista/labs/class``
 
     .. code-block:: text
 
@@ -50,7 +50,7 @@ Now that provided us with more information.
 
 |
 
-6. Create a new file with the following information, and save it as **get-facts2.yml**
+6. Create a new file with the following information, and save it as ``get-facts2.yml``
 
     .. code-block:: yaml
 
@@ -82,4 +82,4 @@ Now that provided us with more information.
 
 |
 
-Section Complete!
+**Section Complete!**
