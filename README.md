@@ -12,5 +12,5 @@ ansible-playbook main.yml -K
 ### Labs section
 There are two directories included in the `labs` directory:
 
-`labs/class/` This is the working directory for the lab.
-`labs/completed/` This contains all files for the completed lab to be referenced in case.
+- `labs/class/` This is the working directory for the lab.
+- `labs/completed/` This contains all files for the completed lab to be referenced in case.
