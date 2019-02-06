@@ -1,16 +1,12 @@
 ## Arista + Ansible Lab
-This repo is to be used with the Arista Test Drive labs. To use this repo, clone it to the labvm within the Arista Test Drive as the `aristagui` user:
+This repo is to be used with the Arista Test Drive labs. To use this repo, clone it to the labvm within the Arista Test Drive as the `aristagui` user.  The labguides will need to be built as well.  Run the following commands to get the lab and to build the documentation.
 
 ```
 ssh aristagui@xxx.xxx.xxx.xxx
 cd Documents
 git clone https://github.com/networkRob/ansible-arista.git
 cd ansible-arista
-```
-
-To open the labguides, run the following script:
-```
-./open-guide.sh
+ansible-playbook main.yml -K
 ```
 
 ### Labs section
