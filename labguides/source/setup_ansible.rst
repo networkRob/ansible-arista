@@ -5,11 +5,11 @@ Exercise 1 - Ansible Setup
  
 |
 
-2. First let's add a **Project Folder**.  Go to **File > Add Project Folder..** 
+2. First let's add a **Project Folder**.  Go to **File > Add Project Folder.** 
 
 |
 
-3. Navigate to: **~/Documents/ansible-arista/labs/class** and click **OK**
+3. Navigate to: ``~/Documents/ansible-arista/labs/class`` and click **OK**
 
 |
 
@@ -18,7 +18,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-4. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as **ansible.cfg**
+4. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as ``ansible.cfg``
 
     .. code-block:: text
 
@@ -37,7 +37,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-5. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as **hosts**
+5. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as ``hosts``
 
     .. code-block:: text
 
@@ -52,9 +52,16 @@ Exercise 1 - Ansible Setup
             spines
             leafs
 
+    .. note::
+      By specifying ``192.168.0.1[4:7]`` is the same as entering each IP indivdually from 192.168.0.14 to 192.168.0.17.
+
 |
 
+<<<<<<< HEAD
 6. Create a *New File* with the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
+=======
+6. Create a *New File* withe the following host specific variables for leaf4.  Save the file as ``host_vars/192.168.0.17.yml``
+>>>>>>> Updating formatting
 
     .. code-block:: yaml
 
@@ -76,7 +83,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-7. Create a *New File* with the following group variables.  Save this file as **group_vars/all.yml**
+7. Create a *New File* with the following group variables.  Save this file as ``group_vars/all.yml``
 
     .. code-block:: text
 
