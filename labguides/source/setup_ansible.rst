@@ -24,7 +24,7 @@ Exercise 1 - Ansible Setup
 
         [defaults]
         # Turn off Deprecation Warnings
-        deprecation_warnings=False
+        deprecation_warnings = False
 
         # Disable SSH Host Key Checking
         host_key_checking = False
@@ -54,7 +54,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-6. Create a *New File* withe the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
+6. Create a *New File* with the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
 
     .. code-block:: yaml
 
