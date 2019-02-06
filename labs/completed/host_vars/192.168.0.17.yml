@@ -1,12 +1,14 @@
 l3_intf:
   - name: Ethernet2
-    ipaddress: 172.16.200.14/30
+    ipaddress: 172.16.200.14
+    mask: 30
   - name: Ethernet3
-    ipaddress: 172.16.200.30/30
+    ipaddress: 172.16.200.30
+    mask: 30
   - name: Loopback0
-    ipaddress: 172.16.0.6/32
+    ipaddress: 172.16.0.6
+    mask: 32
 
-bgp_id: 172.16.0.6
 bgp_as: 65002
 bgp_conf:
   - ip: 172.16.200.13

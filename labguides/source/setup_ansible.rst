@@ -5,11 +5,11 @@ Exercise 1 - Ansible Setup
  
 |
 
-2. First let's add a **Project Folder**.  Go to **File > Add Project Folder..** 
+2. First let's add a **Project Folder**.  Go to **File > Add Project Folder.** 
 
 |
 
-3. Navigate to: **~/Documents/ansible-arista/labs/class** and click **OK**
+3. Navigate to: ``~/Documents/ansible-arista/labs/class`` and click **OK**
 
 |
 
@@ -18,7 +18,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-4. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as **ansible.cfg**
+4. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as ``ansible.cfg``
 
     .. code-block:: text
 
@@ -34,10 +34,11 @@ Exercise 1 - Ansible Setup
 
         # Turn off generation of .retry files:
         retry_files_enabled = False
+    
 
 |
 
-5. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as **hosts**
+5. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as ``hosts``
 
     .. code-block:: text
 
@@ -52,31 +53,38 @@ Exercise 1 - Ansible Setup
             spines
             leafs
 
+    .. note::
+      By specifying ``192.168.0.1[4:7]`` is the same as entering each IP indivdually from 192.168.0.14 to 192.168.0.17.
+
 |
 
-6. Create a *New File* with the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
+6. Create a *New File* with the following host specific variables for leaf4.  Save the file as ``host_vars/192.168.0.17.yml``
 
     .. code-block:: yaml
 
         l3_intf:
           - name: Ethernet2
-            ipaddress: 172.16.200.14/30
+            ipaddress: 172.16.200.14
+            mask: 30
           - name: Ethernet3
-            ipaddress: 172.16.200.30/30
+            ipaddress: 172.16.200.30
+            mask: 30
           - name: Loopback0
-            ipaddress: 172.16.0.6/32
+            ipaddress: 172.16.0.6
+            mask: 32
 
+        bgp_as: 65002
         bgp_conf:
-          - neighbor: 172.16.200.13
+          - ip: 172.16.200.13
             remote_as: 65000
-          - neighbor: 172.16.200.29
+          - ip: 172.16.200.29
             remote_as: 65000
-          - neighbor: 172.16.34.1
+          - ip: 172.16.34.1
             remote_as: 65002
 
 |
 
-7. Create a *New File* with the following group variables.  Save this file as **group_vars/all.yml**
+7. Create a *New File* with the following group variables.  Save this file as ``group_vars/all.yml``
 
     .. code-block:: text
 
@@ -106,4 +114,4 @@ Exercise 1 - Ansible Setup
 
 |
 
-Section Complete! 
+**Section Complete!**

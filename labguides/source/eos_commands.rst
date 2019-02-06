@@ -5,7 +5,7 @@ Exercise 3 - EOS Commands
 
 |
 
-2. Create a new file with the following information, and save it as **show-lldp.yml**
+2. Create a new file with the following information, and save it as ``show-lldp.yml``
 
     .. code-block:: yaml
 
@@ -39,7 +39,7 @@ Exercise 3 - EOS Commands
 
 |
 
-4. Let's duplicate **show-lldp.yml** as a new file **show-lldp-2.yml**.  We will modify the **eos_command** section for this playbook to specify that we would like to get json data in return.
+4. Let's duplicate ``show-lldp.yml`` as a new file ``show-lldp-2.yml``.  We will modify the **eos_command** section for this playbook to specify that we would like to get json data in return.
 
     .. code-block:: yaml
 
@@ -74,4 +74,4 @@ The output is now in a familiar json data format.
 
 
 
-Section Complete!
+**Section Complete!**
