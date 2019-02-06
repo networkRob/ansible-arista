@@ -26,8 +26,8 @@ Exercise 7 - EOS L3 Interfaces (Continued)
 
         ---
         - hosts: 192.168.0.17
-        gather_facts: false
-        tasks:
+          gather_facts: false
+          tasks:
             - name: Apply L3 Interfaces to Leaf4
               eos_config:
                 src: l3-intf.j2
