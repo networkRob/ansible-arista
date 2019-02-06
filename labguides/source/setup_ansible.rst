@@ -1,28 +1,15 @@
 Exercise 1 - Ansible Setup
 ==========================
 
-1. From the DevBox Desktop, open a **Terminal** window from the bottom toolbar.
-
-|
-
-2. Change the current working directory and download the Ansible Lab content:
-
-    .. code-block:: text
-
-       cd Documents
-       git clone git@github.com:networkRob/ansible-arista.git
-       
-|
-
-3. Next open **Atom** from the bottom toolbar.  We will use this application to help write our Ansible playbooks and files.
+1. From the DevBox Desktop, open **Atom** from the bottom toolbar.  We will use this application to help write our Ansible playbooks and files.
  
 |
 
-4. First let's add a **Project Folder**.  Go to **File > Add Project Folder..** 
+2. First let's add a **Project Folder**.  Go to **File > Add Project Folder..** 
 
 |
 
-5. Navigate to: **~/Documents/ansible-arista/labs/class** and click **OK**
+3. Navigate to: **~/Documents/ansible-arista/labs/class** and click **OK**
 
 |
 
@@ -31,7 +18,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-6. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as **ansible.cfg**
+4. We will start with creating the Ansible configuration file.  In **Atom** enter the following information and save the file as **ansible.cfg**
 
     .. code-block:: text
 
@@ -50,7 +37,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-7. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as **hosts**
+5. Create a *New File*: **File > New File** and enter the following inventory information.  Save the file as **hosts**
 
     .. code-block:: text
 
@@ -67,7 +54,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-8. Create a *New File* withe the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
+6. Create a *New File* withe the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
 
     .. code-block:: yaml
 
@@ -89,7 +76,7 @@ Exercise 1 - Ansible Setup
 
 |
 
-9. Create a *New File* with the following group variables.  Save this file as **group_vars/all.yml**
+7. Create a *New File* with the following group variables.  Save this file as **group_vars/all.yml**
 
     .. code-block:: text
 
