@@ -1,5 +1,5 @@
 Welcome to the Arista Ansible documentation!
-=============================================
+============================================
 
 .. toctree::
    :maxdepth: 1

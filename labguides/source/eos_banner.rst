@@ -5,7 +5,7 @@ Exercise 5 - EOS Banner
 
 |
 
-2. Create a new file with the following information, and save it as **add-banner.yml**
+2. Create a new file with the following information, and save it as ``add-banner.yml``
 
     .. code-block:: yaml
 
@@ -28,7 +28,7 @@ Exercise 5 - EOS Banner
 
 |
 
-3. Before we run this playbook, in **Terminal** let's login to a switch to see the current state of the login banner. username: arista / password: arista
+3. Before we run this playbook, in **Terminal** let's login to a switch to see the current state of the login banner. username: ``arista`` password: ``arista``
 
     .. code-block:: text
 
@@ -58,4 +58,4 @@ Exercise 5 - EOS Banner
 
 |
 
-Section Complete!
+**Section Complete!**

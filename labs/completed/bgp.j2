@@ -1,5 +1,10 @@
 router bgp {{ bgp_as }}
-   router-id {{ bgp_id }}
+{% for intf in l3_intf %}
+{% if intf.name == 'Loopback0' %}
+   router-id {{ intf.ipaddress }}
+   network {{ intf.ipaddress }}/{{ intf.mask }}
+{% endif %}
+{% endfor %}
    maximum-paths 4 ecmp 4
 {% for neighbor in bgp_conf %}
    neighbor {{ neighbor.ip }} remote-as {{ neighbor.remote_as }}
@@ -9,5 +14,4 @@ router bgp {{ bgp_as }}
    neighbor {{ neighbor.ip }} maximum-routes 12000
 {% endif %}
 {% endfor %}
-   network {{ bgp_id }}/32
    network 172.16.116.0/24

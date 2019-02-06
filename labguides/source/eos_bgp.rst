@@ -5,12 +5,17 @@ Exercise 8 - EOS BGP Configuration
 
 |
 
-2. First we will need to create a new Jinja2 template.  Add the following ad save it as **bgp.j2**
+2. First we will need to create a new Jinja2 template.  Add the following ad save it as ``bgp.j2``
 
     .. code-block:: text
 
         router bgp {{ bgp_as }}
-           router-id {{ bgp_id }}
+        {% for intf in l3_intf %}
+        {% if intf.name == 'Loopback0' %}
+           router-id {{ intf.ipaddress }}
+           network {{ intf.ipaddress }}/{{ intf.mask }}
+        {% endif %}
+        {% endfor %}
            maximum-paths 4 ecmp 4
         {% for neighbor in bgp_conf %}
            neighbor {{ neighbor.ip }} remote-as {{ neighbor.remote_as }}
@@ -20,10 +25,9 @@ Exercise 8 - EOS BGP Configuration
            neighbor {{ neighbor.ip }} maximum-routes 12000
         {% endif %}
         {% endfor %}
-           network {{ bgp_id }}/32
            network 172.16.116.0/24
 
-2. Create a new file with the following information, and save it as **add-bgp.yml**
+2. Create a new file with the following information, and save it as ``add-bgp.yml``
 
     .. code-block:: yaml
 
@@ -39,7 +43,7 @@ Exercise 8 - EOS BGP Configuration
 
 |
 
-3. Before we run this playbook, in **Terminal** let's login to see the BGP state configured on leaf4. username: arista / password: arista
+3. Before we run this playbook, in **Terminal** let's login to see the BGP state configured on leaf4. username: ``arista`` password: ``arista``
 
     .. code-block:: text
 
@@ -75,4 +79,4 @@ Exercise 8 - EOS BGP Configuration
 
 
 
-Section Complete!
+**Section Complete!**

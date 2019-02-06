@@ -34,6 +34,7 @@ Exercise 1 - Ansible Setup
 
         # Turn off generation of .retry files:
         retry_files_enabled = False
+    
 
 |
 
@@ -57,28 +58,28 @@ Exercise 1 - Ansible Setup
 
 |
 
-<<<<<<< HEAD
-6. Create a *New File* with the following host specific variables for leaf4.  Save the file as **host_vars/192.168.0.17.yml**
-=======
-6. Create a *New File* withe the following host specific variables for leaf4.  Save the file as ``host_vars/192.168.0.17.yml``
->>>>>>> Updating formatting
+6. Create a *New File* with the following host specific variables for leaf4.  Save the file as ``host_vars/192.168.0.17.yml``
 
     .. code-block:: yaml
 
         l3_intf:
           - name: Ethernet2
-            ipaddress: 172.16.200.14/30
+            ipaddress: 172.16.200.14
+            mask: 30
           - name: Ethernet3
-            ipaddress: 172.16.200.30/30
+            ipaddress: 172.16.200.30
+            mask: 30
           - name: Loopback0
-            ipaddress: 172.16.0.6/32
+            ipaddress: 172.16.0.6
+            mask: 32
 
+        bgp_as: 65002
         bgp_conf:
-          - neighbor: 172.16.200.13
+          - ip: 172.16.200.13
             remote_as: 65000
-          - neighbor: 172.16.200.29
+          - ip: 172.16.200.29
             remote_as: 65000
-          - neighbor: 172.16.34.1
+          - ip: 172.16.34.1
             remote_as: 65002
 
 |
@@ -113,4 +114,4 @@ Exercise 1 - Ansible Setup
 
 |
 
-Section Complete! 
+**Section Complete!**
