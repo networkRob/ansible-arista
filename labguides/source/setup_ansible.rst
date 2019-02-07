@@ -80,6 +80,11 @@ Exercise 1 - Ansible Setup
         ansible_become: true
         ansible_become_method: enable
 
+        cvp_server: "192.168.0.5"
+        cvp_base_url: "https://{{ cvp_server }}"
+        cvp_protocol: "https"
+        switch_sn: "spine1"
+
         eos_vlans:
           - vlan_id: 2002
             name: DMZ

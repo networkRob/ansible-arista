@@ -1,0 +1,34 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+  tasks:
+    - name: Setup REST API Session
+      uri:
+       url: "{{ cvp_base_url }}/cvpservice/login/authenticate.do"
+       method: POST
+       validate_certs: no
+       headers: 
+         Accept: "application/json"
+         Content-Type: "application/json"
+       body_format: "json"
+       body:
+        userId: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+       force_basic_auth: yes
+       status_code: 200,201
+      register: login
+
+    - name: Get BGP Status
+      uri:
+        url: "{{ cvp_base_url }}/api/v1/rest/{{ switch_sn }}/Smash/routing/bgp/bgpPeerInfoStatus/default/bgpPeerStatusEntry"
+        method: GET
+        validate_certs: no
+        return_content: yes
+        headers:
+          Cookie: "{{ login.set_cookie }}"
+      register: bgp_status
+   
+    - debug:
+        msg: "{{ item }}"
+      loop: "{{ bgp_status.json.notifications }}"    

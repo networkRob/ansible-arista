@@ -14,3 +14,5 @@ Welcome to the Arista Ansible documentation!
    eos_l3.rst
    eos_l3-2.rst
    eos_bgp.rst
+   cvp_devices.rst
+   cvp_bgp.rst
