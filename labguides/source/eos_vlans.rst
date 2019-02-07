@@ -3,8 +3,6 @@ Exercise 4 - EOS VLANs
 
 1. Next we will go over the **eos_vlan** module.  This module allows vlans to be added, deleted and modified from a playbook.
 
-|
-
 2. Create a new file with the following information, and save it as ``add-vlan.yml``
 
     .. code-block:: yaml
@@ -22,9 +20,7 @@ Exercise 4 - EOS VLANs
               eos_vlan:
                 aggregate: "{{ eos_vlans }}"
 
-    This playbook calls the **eos_vlan** module twice.  The first task creates a single defined VLAN.  The second task creates a set of VLANs defined in ``group_vars/all.yml``
-
-|
+This playbook calls the **eos_vlan** module twice.  The first task creates a single defined VLAN.  The second task creates a set of VLANs defined in ``group_vars/all.yml``
 
 3. Before we run this playbook, in **Terminal** let's login to a switch to see the current state of VLANs. username: ``arista`` password: ``arista``
 

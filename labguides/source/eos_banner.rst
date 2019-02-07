@@ -3,8 +3,6 @@ Exercise 5 - EOS Banner
 
 1. Next we will go over the **eos_banner** module.  This module allows the login banner for the switch to be updated/modified from a playbook.
 
-|
-
 2. Create a new file with the following information, and save it as ``add-banner.yml``
 
     .. code-block:: yaml
@@ -26,7 +24,8 @@ Exercise 5 - EOS Banner
                     ************************************
                 state: present
 
-|
+.. note::
+    You can put your own login message for the text parameter in ``eos_banner``.
 
 3. Before we run this playbook, in **Terminal** let's login to a switch to see the current state of the login banner. username: ``arista`` password: ``arista``
 

@@ -3,8 +3,6 @@ Exercise 6 - EOS L3 Interfaces
 
 1. Next we will go over the **eos_l3_interface**.  This module allows us to create/modify L3 interfaces on a switch from a playbook.
 
-|
-
 2. Create a new file with the following information, and save it as ``add-l3.yml``
 
     .. code-block:: yaml
@@ -18,8 +16,6 @@ Exercise 6 - EOS L3 Interfaces
                 name: "{{ item.name }}"
                 ipv4: "{{ item.ipaddress }}/{{ item.mask }}"
               loop: "{{ l3_intf }}"
-
-|
 
 3. Before we run this playbook, in **Terminal** let's login to a switch to see the current IP addreses configured on leaf4. username: ``arista`` password: ``arista``
 
